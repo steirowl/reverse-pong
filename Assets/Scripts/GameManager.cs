@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DiscordPresence;
 
 public class GameManager : MonoBehaviour
 {
@@ -59,6 +60,11 @@ public class GameManager : MonoBehaviour
             else {
                 Timer.GetComponent<Text>().text = minutes.ToString() + ":" + seconds.ToString(); 
             }
+            Debug.Log(Timer.GetComponent<Text>().text);
+            PresenceManager.UpdatePresence(detail: "In Game", state: "Time: " + Timer.GetComponent<Text>().text + " | Multiply interval " + multiplyInterval);
+
+
+
         }
 
         if (Input.GetKeyUp(KeyCode.Escape)){
@@ -122,8 +128,10 @@ public class GameManager : MonoBehaviour
     }
     
     public void GameEnd(bool isLeft) {
+        gameStarted = false;
         GameUI.SetActive(false);
         GameOver.SetActive(true);
+        PresenceManager.UpdatePresence(detail: "In Menu", state: "");
         Time.timeScale = 0;
         if (isMultiplayer) {
             if(isLeft){
