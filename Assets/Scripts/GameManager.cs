@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour
 
     //////////SERVER VARS//////////
 
-    private string secretKey = "pios345noib09845ujg";
+    private string secretKey = "";
     string uniquePlayerID;
-    public string addScoreURL = "http://steirii.xyz/add_score.php?";
+    public string addScoreURL = "";
 
     //////////GAME MANAGEMENT VARS//////////
     static bool isMultiplayer;
