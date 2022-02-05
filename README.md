@@ -1,5 +1,5 @@
 # reverse-pong
-The well known retro game Pong but with a twist.
+The well known retro game Pong but with a twist. (DISCONTINUED BECAUSE I CBA :)
 
 To set up the project for editing simply:
 1. Make a 2D project on Unity (use 2020.2.2f1, unsure about other versions but let me know if others work)
